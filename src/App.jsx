@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { Star, GitFork, Package, AlertTriangle } from 'lucide-react'
 import menuVideo from './assets/Mainn.mp4'
 import menuLoopVideo from './assets/Mainn_1.mp4'
 import main1 from './assets/main1.mp4'
@@ -136,9 +137,9 @@ function SideProjectsPage() {
     const proj = projects[active];
     if (!proj) return null;
     const stats = [
-      { label: "STARS", value: proj.stargazers_count ?? 0, tag: "⭐" },
-      { label: "FORKS", value: proj.forks_count ?? 0, tag: "🍴" },
-      { label: "SIZE (KB)", value: proj.size ?? 0, tag: "📦" }
+      { label: "STARS", value: proj.stargazers_count ?? 0, tag: <Star size={24} /> },
+      { label: "FORKS", value: proj.forks_count ?? 0, tag: <GitFork size={24} /> },
+      { label: "SIZE (KB)", value: proj.size ?? 0, tag: <Package size={24} /> }
     ];
 
     return stats.map((s, i) => (
@@ -148,8 +149,8 @@ function SideProjectsPage() {
         style={{ top: `${155 + i * 52}px`, animationDelay: `${i * 50}ms` }}
         onMouseEnter={() => setActiveInfoBar(i)}
       >
-        <div className="sc-info-bar">
-          <span style={{ fontSize: '24px', marginLeft: '14px', marginRight: '8px' }}>{s.tag}</span>
+          <div className="sc-info-bar">
+          <span className="sc-info-icon" aria-hidden="true">{s.tag}</span>
           <span className="sc-info-bar-text" style={{ flex: 1 }}>{s.label}</span>
           <span className="sc-info-bar-box">VALUE</span>
           <span className="sc-info-bar-count" style={{ width: '60px', textAlign: 'right', marginRight: '16px' }}>{s.value}</span>
@@ -413,6 +414,14 @@ function SideProjectsPage() {
           user-select: none;
         }
 
+        .sc-info-icon {
+          display: flex;
+          align-items: center;
+          margin-left: 14px;
+          margin-right: 8px;
+          color: #111;
+        }
+
         /* Legacy Backup Styles */
         .p3-row-clone {
           position: relative; cursor: pointer; display: inline-flex; align-items: center; justify-content: flex-start; line-height: 1; text-decoration: none; opacity: 0; transform: translateX(-36px); transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.22,1,0.36,1);
@@ -437,7 +446,12 @@ function SideProjectsPage() {
       <div className={`sp-container${mounted ? ' mounted' : ''}`}>
         <h1 className="sp-title">SIDE PROJECTS</h1>
 
-        {error && <div className="sp-error">⚠ {error}</div>}
+        {error && (
+          <div className="sp-error" style={{ display: 'flex', alignItems: 'center', gap: '8px', opacity: 1 }}>
+            <AlertTriangle size={16} />
+            {error}
+          </div>
+        )}
         {loading && <div className="sp-loading">Loading projects...</div>}
 
         <div className="sp-btn-list" role="navigation">

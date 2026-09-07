@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
+import { FolderGit, Briefcase, Camera, User, Bot, MapPin, Sparkles, Palette, Flame } from "lucide-react";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
@@ -20,30 +21,33 @@ const ROLES = [
 
 const ITEMS = [
   {
-    id: "github", label: "GITHUB", handle: "@Kaze-coder", href: "https://github.com/Kaze-coder", icon: "🐙", barIcon: icon1,
+    id: "github", label: "GITHUB", handle: "@Kaze-coder", href: "https://github.com/Kaze-coder", icon: <FolderGit size={22} />, barIcon: icon1,
     details: [
-      { label: "USER", value: "Kaze-coder", icon: "👤" },
-      { label: "ROLE", value: "AI Engineer", icon: "🤖" },
-      { label: "LOC", value: "Bogor, Indonesia", icon: "📍" }
-    ],
+      { label: "USER", value: "Kaze-coder", icon: <User size={24} /> },
+      { label: "ROLE", value: "AI Engineer", icon: <Bot size={24} /> },
+      { label: "LOC", value: "Bogor, Indonesia", icon: <MapPin size={24} /> }
+    ]
+    ,
     stats: [],
   },
   {
-    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: "💼", barIcon: icon2,
+    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <Briefcase size={22} />, barIcon: icon2,
     details: [
-      { label: "USER", value: "Fabiansyah Putra", icon: "👤" },
-      { label: "ROLE", value: "AI Engineer", icon: "🤖" },
-      { label: "STAT", value: "Active", icon: "✨" }
-    ],
+      { label: "USER", value: "Fabiansyah Putra", icon: <User size={24} /> },
+      { label: "ROLE", value: "AI Engineer", icon: <Bot size={24} /> },
+      { label: "STAT", value: "Active", icon: <Sparkles size={24} /> }
+    ]
+    ,
     stats: [],
   },
   {
-    id: "instagram", label: "INSTAGRAM", handle: "kazevalkhov", href: "https://www.instagram.com/kazevalkhov/", icon: "📷", barIcon: icon3,
+    id: "instagram", label: "INSTAGRAM", handle: "kazevalkhov", href: "https://www.instagram.com/kazevalkhov/", icon: <Camera size={22} />, barIcon: icon3,
     details: [
-      { label: "USER", value: "kazevalkhov", icon: "👤" },
-      { label: "TYPE", value: "Personal", icon: "🎨" },
-      { label: "STAT", value: "Active", icon: "🔥" }
-    ],
+      { label: "USER", value: "kazevalkhov", icon: <User size={24} /> },
+      { label: "TYPE", value: "Personal", icon: <Palette size={24} /> },
+      { label: "STAT", value: "Active", icon: <Flame size={24} /> }
+    ]
+    ,
     stats: [],
   },
 ];
@@ -238,16 +242,16 @@ export default function Socials() {
         }
 
         .sc-icon {
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 22px;
           width: 32px;
-          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           flex-shrink: 0;
-          color: rgba(255,255,255,0.15);
+          color: rgba(255,255,255,0.4);
           transition: color 0.2s ease;
           user-select: none;
         }
-        .sc-bar-outer.active .sc-icon { color: rgba(255,255,255,0.25); }
+        .sc-bar-outer.active .sc-icon { color: rgba(255,255,255,0.9); }
 
         .sc-label {
           font-family: 'Bebas Neue', sans-serif;
@@ -447,6 +451,14 @@ export default function Socials() {
           color: #000;
         }
 
+        .sc-info-icon {
+          display: flex;
+          align-items: center;
+          margin-left: 14px;
+          margin-right: 8px;
+          color: #111;
+        }
+
         /* footer hints */
         .sc-footer {
           position: fixed;
@@ -520,7 +532,7 @@ export default function Socials() {
           onMouseEnter={() => setActiveInfoBar(i)}
         >
           <div className="sc-info-bar">
-            <span style={{ fontSize: '24px', marginLeft: '14px', marginRight: '8px' }}>{detail.icon}</span>
+            <span className="sc-info-icon" aria-hidden="true">{detail.icon}</span>
             <span className="sc-info-bar-text" style={{ flex: '0 0 80px' }}>{detail.label}</span>
             <span className="sc-info-bar-count" style={{
               flex: 1,

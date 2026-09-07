@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
+import { User, Cog, BookOpen } from "lucide-react";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
@@ -46,7 +47,7 @@ const ROLES = [
 
 const ITEMS = [
   {
-    id: "about", label: "ABOUT ME", handle: profile.username, href: profile.links[0].href, icon: "👤", barIcon: icon1, bars: 1, newBars: [0], counts: ["1"],
+    id: "about", label: "ABOUT ME", handle: profile.username, href: profile.links[0].href, icon: <User size={22} />, barIcon: icon1, bars: 1, newBars: [0], counts: ["1"],
     links: [profile.links[0].href],
     stats: [
       { tag: "Status", value: profile.title, color: "#4a8fff" },
@@ -54,7 +55,7 @@ const ITEMS = [
     ],
   },
   {
-    id: "tech", label: "TECH STACK", handle: "Skills", href: profile.links[0].href, icon: "⚙️", barIcon: icon2, bars: profile.techStack.languages.length, newBars: [0, 1], counts: profile.techStack.languages,
+    id: "tech", label: "TECH STACK", handle: "Skills", href: profile.links[0].href, icon: <Cog size={22} />, barIcon: icon2, bars: profile.techStack.languages.length, newBars: [0, 1], counts: profile.techStack.languages,
     links: profile.techStack.languages,
     stats: [
       { tag: "LANGS", value: profile.techStack.languages.length, color: "#e8c100" },
@@ -62,7 +63,7 @@ const ITEMS = [
     ],
   },
   {
-    id: "learning", label: "CURRENTLY LEARNING", handle: "Progress", href: profile.links[0].href, icon: "📚", barIcon: icon3, bars: profile.learning.length, newBars: [0, 1, 2], counts: profile.learning,
+    id: "learning", label: "CURRENTLY LEARNING", handle: "Progress", href: profile.links[0].href, icon: <BookOpen size={22} />, barIcon: icon3, bars: profile.learning.length, newBars: [0, 1, 2], counts: profile.learning,
     links: profile.learning,
     stats: [
       { tag: "AREAS", value: "4", color: "#ff6b6b" },
