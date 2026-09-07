@@ -24,7 +24,7 @@ const ITEMS = [
     details: [
       { label: "USER", value: "Kaze-coder", icon: "👤" },
       { label: "ROLE", value: "AI Engineer", icon: "🤖" },
-      { label: "LOC", value: "Indore, India", icon: "📍" }
+      { label: "LOC", value: "Bogor, Indonesia", icon: "📍" }
     ],
     stats: [],
   },
@@ -38,9 +38,9 @@ const ITEMS = [
     stats: [],
   },
   {
-    id: "instagram", label: "INSTAGRAM", handle: "mohammadhussain9805", href: "https://www.instagram.com/mohammadhussain9805/", icon: "📷", barIcon: icon3,
+    id: "instagram", label: "INSTAGRAM", handle: "kazevalkhov", href: "https://www.instagram.com/kazevalkhov/", icon: "📷", barIcon: icon3,
     details: [
-      { label: "USER", value: "mohammadhussain9805", icon: "👤" },
+      { label: "USER", value: "kazevalkhov", icon: "👤" },
       { label: "TYPE", value: "Personal", icon: "🎨" },
       { label: "STAT", value: "Active", icon: "🔥" }
     ],

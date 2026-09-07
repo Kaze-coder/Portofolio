@@ -94,16 +94,17 @@ function SideProjectsPage() {
       try {
         setLoading(true)
         setError(null)
-        const response = await fetch('https://api.github.com/users/Kaze-coder/repos?sort=stars&per_page=6')
+        const response = await fetch('https://api.github.com/users/Kaze-coder/repos?sort=stars&per_page=100')
         if (!response.ok) throw new Error('Failed to fetch projects')
         const data = await response.json()
-        setProjects(data && Array.isArray(data) ? data : [])
+        const featured = ['PRDly', 'website-las']
+        setProjects(featured.map(name => data.find(r => r.name === name)).filter(Boolean))
       } catch (err) {
         console.error('Error fetching projects:', err)
         setError('Unable to load projects at this time')
         setProjects([
-          { name: 'AI/ML Repository', language: 'Python', stargazers_count: 5, forks_count: 2, size: 1024, html_url: 'https://github.com/Kaze-coder' },
-          { name: 'Web Portfolio', language: 'React', stargazers_count: 1, forks_count: 0, size: 2048, html_url: 'https://github.com/Kaze-coder' },
+          { name: 'PRDly', language: 'TypeScript', stargazers_count: 0, forks_count: 0, size: 500, html_url: 'https://github.com/Kaze-coder/PRDly' },
+          { name: 'website-las', language: 'HTML', stargazers_count: 1, forks_count: 0, size: 500, html_url: 'https://github.com/Kaze-coder/website-las' },
         ])
       } finally {
         setLoading(false)
@@ -180,7 +181,7 @@ function SideProjectsPage() {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 88px;
           line-height: 0.9;
-          color: #ffffff;
+          color: #0f1c69;
           letter-spacing: 4px;
           text-shadow: 0 2px 0 rgba(0,0,0,0.18);
           opacity: 0;
@@ -196,7 +197,7 @@ function SideProjectsPage() {
           font-family: 'Montserrat', sans-serif;
           font-size: 18px;
           font-weight: 300;
-          color: #ffffff;
+          color: #0f1c69;
           letter-spacing: 1px;
           max-width: 55vw;
           line-height: 1.6;

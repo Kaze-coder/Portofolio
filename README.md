@@ -41,8 +41,8 @@ Windows: double-click `run_app.bat` (auto cek Node + install + jalanin dev).
 ## 📫 Kontak
 
 - GitHub: [@Kaze-coder](https://github.com/Kaze-coder)
-- LinkedIn: [Fabiansyah Putra](https://www.linkedin.com/in/mohammad-hussain-546315402)
-- Instagram: [@mohammadhussain9805](https://www.instagram.com/mohammadhussain9805)
+- LinkedIn: —
+- Instagram: [@kazevalkhov](https://www.instagram.com/kazevalkhov/)
 
 ## 📜 Lisensi
 

@@ -5,7 +5,7 @@ export const profile = {
   bio: "AI/ML student obsessed with understanding how models actually work — from the math up. Comfortable in Python, getting sharper in C++.",
   intro:
     "College student focused on AI and machine learning, building projects to understand systems deeply instead of treating them like black boxes.",
-  location: "Indore, India",
+  location: "Bogor, Indonesia",
   accountCreated: "March 16, 2026",
   lastUpdated: "April 9, 2026",
   stats: [
@@ -41,8 +41,8 @@ export const profile = {
     },
     {
       label: "Instagram",
-      href: "https://www.instagram.com/mohammadhussain9805",
-      short: "@mohammadhussain9805",
+      href: "https://www.instagram.com/kazevalkhov",
+      short: "@kazevalkhov",
     },
   ],
 };
