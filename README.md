@@ -36,8 +36,6 @@ npm run build
 npm start        # Express → http://localhost:3000
 ```
 
-Windows: double-click `run_app.bat` (auto cek Node + install + jalanin dev).
-
 ## 📫 Kontak
 
 - GitHub: [@Kaze-coder](https://github.com/Kaze-coder)
