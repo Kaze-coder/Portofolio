@@ -452,26 +452,31 @@ export default function ResumePage({ src }) {
             <div className="resume-detail-top">
               <div className="resume-detail-top-index">02</div>
               <div className="resume-detail-top-title">ACADEMIC JOURNEY</div>
-              <div className="resume-detail-top-progress">2/∞</div>
+              <div className="resume-detail-top-progress">3/∞</div>
             </div>
 
             <div className="resume-detail-list">
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">01</div>
-                <div className="resume-detail-row-title">SMK — Rekayasa Perangkat Lunak</div>
-                <div className="resume-detail-status">Current</div>
+                <div className="resume-detail-row-title">MI Yayasan Nurul Huda</div>
+                <div className="resume-detail-status">SD</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">02</div>
-                <div className="resume-detail-row-title">Self-Taught Web & AI Development</div>
-                <div className="resume-detail-status">Ongoing</div>
+                <div className="resume-detail-row-title">SMPN 1 Gunung Putri</div>
+                <div className="resume-detail-status">SMP</div>
+              </div>
+              <div className="resume-detail-row">
+                <div className="resume-detail-row-index">03</div>
+                <div className="resume-detail-row-title">SMK Bina Mandiri Multimedia</div>
+                <div className="resume-detail-status">SMK</div>
               </div>
             </div>
 
             <div className="resume-detail-bottom">
               <div className="resume-detail-bottom-title">FOCUS</div>
               <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Software engineering fundamentals: clean code, version control,<br />&nbsp;&nbsp;and collaborative development.</div>
+                <div className="resume-detail-bullet">- Multimedia and software engineering: web development, design,<br />&nbsp;&nbsp;and interactive media.</div>
                 <div className="resume-detail-bullet">- Hands-on web development with PHP, Laravel, JavaScript, and<br />&nbsp;&nbsp;modern frameworks.</div>
                 <div className="resume-detail-bullet">- Continuous learning in AI engineering through online courses<br />&nbsp;&nbsp;and personal projects.</div>
               </div>
