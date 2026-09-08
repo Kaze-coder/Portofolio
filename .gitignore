@@ -24,9 +24,7 @@ dist-ssr
 *.sw?
 
 # Large media files (>100MB, GitHub hard limit — kept local only)
-src/assets/AboutMe.mp4
 src/assets/MainMenus.mp4
 src/assets/SideProjects.mp4
-src/assets/Socials.mp4
 
 .claude/
