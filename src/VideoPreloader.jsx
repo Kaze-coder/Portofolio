@@ -1,6 +1,6 @@
-import main1 from './assets/main1.mp4'
-import main2 from './assets/main2.mp4'
-import main3 from './assets/main3.mp4'
+import aboutVideo from './assets/AboutMe.mp4'
+import resumeVideo from './assets/Resume.mp4'
+import socialsVideo from './assets/Socials.mp4'
 
 // Buffers the About / Resume / Socials backgrounds while the user sits on
 // the main menu, so page navigation swaps to an already-cached video.
@@ -17,9 +17,9 @@ export default function VideoPreloader() {
       pointerEvents: 'none',
       zIndex: -1,
     }}>
-      <video src={main1} preload="auto" muted playsInline />
-      <video src={main2} preload="auto" muted playsInline />
-      <video src={main3} preload="auto" muted playsInline />
+      <video src={aboutVideo} preload="auto" muted playsInline />
+      <video src={resumeVideo} preload="auto" muted playsInline />
+      <video src={socialsVideo} preload="auto" muted playsInline />
     </div>
   )
 }
