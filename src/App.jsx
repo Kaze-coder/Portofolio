@@ -5,9 +5,8 @@ import { Star, GitFork, Package, AlertTriangle } from 'lucide-react'
 import menuVideo from './assets/MainMenus.mp4'
 import menuLoopVideo from './assets/MainMenus.mp4'
 import main1 from './assets/main1.mp4'
-import main2 from './assets/Resume.mp4'
+import main2 from './assets/main2.mp4'
 import main3 from './assets/main3.mp4'
-import sideProjVideo from './assets/SideProjects.mp4'
 import P3Menu from './P3Menu'
 import VideoPage from './VideoPage'
 import ResumePage from './ResumePage'
@@ -162,7 +161,7 @@ function SideProjectsPage() {
 
   return (
     <div id="menu-screen">
-      <BackgroundVideo intro={sideProjVideo} loop={sideProjVideo} />
+      <BackgroundVideo intro={menuVideo} loop={menuLoopVideo} />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,700;1,700&family=Montserrat:wght@300&display=swap');
         

@@ -5,7 +5,7 @@ import { FolderGit, Briefcase, Camera, User, Bot, MapPin, Sparkles, Palette, Fla
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
-import bgVideo from "./assets/Socials.mp4";
+import bgVideo from "./assets/main3.mp4";
 import newsign from "./assets/newsign.png";
 import icon1 from "./assets/icon1.png";
 import icon2 from "./assets/icon2.png";
