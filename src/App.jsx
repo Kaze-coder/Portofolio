@@ -332,7 +332,23 @@ function SideProjectsPage() {
           transition: color 0.2s ease;
           user-select: none;
         }
-        .sc-bar-outer.active .sc-label { color: var(--p3-text-on-light); }
+        .sc-bar-outer.active .sc-label { color: #ffffff; }
+
+        /* Dual-color label: black text layer clipped to the blue fill so the
+           label reads white over the dark bar and black over the cyan fill. */
+        .sc-clip-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 3;
+          clip-path: polygon(100% 0, 100% 0, calc(100% - 32px) 100%, calc(100% - 32px) 100%);
+          transition: clip-path 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+          pointer-events: none;
+        }
+        .sc-bar-outer.active .sc-clip-overlay {
+          clip-path: polygon(22% 0, 100% 0, calc(100% - 14px) 100%, calc(22% + 138px) 100%);
+        }
+        .sc-clip-overlay .sc-label,
+        .sc-clip-overlay .sc-role { color: #111; }
 
         /* ── Info Bars (Right Side Details) ── */
         @keyframes sc-infobar-in {
@@ -489,6 +505,16 @@ function SideProjectsPage() {
                   <div className="sc-main">
                     <div className="sc-label" style={{ fontSize: proj.name.length > 20 ? '22px' : '28px' }}>
                       {proj.name}
+                    </div>
+                  </div>
+                </div>
+                <div className="sc-clip-overlay" aria-hidden="true">
+                  <div className="sc-bar-content">
+                    <div className="sc-role">{proj.language ? proj.language.toUpperCase().substring(0, 6) : "REPO"}</div>
+                    <div className="sc-main">
+                      <div className="sc-label" style={{ fontSize: proj.name.length > 20 ? '22px' : '28px' }}>
+                        {proj.name}
+                      </div>
                     </div>
                   </div>
                 </div>
