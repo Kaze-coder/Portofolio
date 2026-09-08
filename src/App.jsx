@@ -239,8 +239,8 @@ function SideProjectsPage() {
           transform: translateX(-48px);
           transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .sc-bar-outer.active .sc-bar     { height: 90px; }
-        .sc-bar-outer.active .sc-bar-red { height: 90px; opacity: 1; }
+        .sc-bar-outer.active .sc-bar     { height: 118px; }
+        .sc-bar-outer.active .sc-bar-red { height: 118px; opacity: 1; }
         .sc-bar-outer.mounted { opacity: 1; transform: translateX(0); }
 
         .sc-bar-red {
@@ -470,6 +470,47 @@ function SideProjectsPage() {
         .p3-row-clone:hover .p3-label-bright-clone { opacity: 1; }
         
         .sp-loading { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #8df6ff; letter-spacing: 1px; opacity: 0.8; animation: sp-pulse 1.5s ease-in-out infinite; }
+
+        /* Action buttons under project name — revealed on hover */
+        .sp-actions {
+          display: flex;
+          gap: 10px;
+          margin-top: 6px;
+          opacity: 0;
+          transform: translateY(-6px);
+          transition: opacity 0.25s ease 0.12s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+          pointer-events: none;
+        }
+        .sc-bar-outer.active .sp-actions {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+        .sp-action-btn {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 16px;
+          letter-spacing: 2px;
+          padding: 3px 14px 1px;
+          color: #8df6ff;
+          background: rgba(0, 0, 0, 0.85);
+          border: 1px solid rgba(141, 246, 255, 0.5);
+          clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 100%, 6px 100%);
+          cursor: pointer;
+          text-decoration: none;
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+        .sp-action-btn:hover {
+          background: var(--p3-blue-light);
+          color: #111;
+        }
+        .sp-action-btn-demo {
+          color: #ffd2d8;
+          border-color: rgba(255, 100, 130, 0.5);
+        }
+        .sp-action-btn-demo:hover {
+          background: #ff5a75;
+          color: #fff;
+        }
         @keyframes sp-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
         .sp-error { font-family: 'Montserrat', sans-serif; font-size: 14px; padding: 12px 18px; background: rgba(232, 61, 49, 0.15); border: 1px solid rgba(232, 61, 49, 0.4); color: #ff9999; clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 100%, 6px 100%); margin-bottom: 16px; opacity: 0; }
       `}</style>
@@ -508,6 +549,28 @@ function SideProjectsPage() {
                     <div className="sc-label" style={{ fontSize: proj.name.length > 20 ? '22px' : '28px' }}>
                       {proj.name}
                     </div>
+                    <div className="sp-actions">
+                      <a
+                        className="sp-action-btn"
+                        href={proj.html_url || "https://github.com/Kaze-coder"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        VISIT
+                      </a>
+                      {proj.homepage && (
+                        <a
+                          className="sp-action-btn sp-action-btn-demo"
+                          href={proj.homepage}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          DEMO
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div className="sc-clip-overlay" aria-hidden="true">
@@ -516,6 +579,10 @@ function SideProjectsPage() {
                     <div className="sc-main">
                       <div className="sc-label" style={{ fontSize: proj.name.length > 20 ? '22px' : '28px' }}>
                         {proj.name}
+                      </div>
+                      <div className="sp-actions">
+                        <span className="sp-action-btn">VISIT</span>
+                        {proj.homepage && <span className="sp-action-btn sp-action-btn-demo">DEMO</span>}
                       </div>
                     </div>
                   </div>
