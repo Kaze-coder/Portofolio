@@ -386,9 +386,13 @@ function SideProjectsPage() {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 22px;
           letter-spacing: 2px;
-          color: var(--p3-bg-dark);
+          color: #8df6ff;
           padding: 0 14px;
           user-select: none;
+          transition: color 0.2s ease;
+        }
+        .sc-info-bar-wrap.selected .sc-info-bar-text {
+          color: var(--p3-bg-dark);
         }
         .sc-info-bar-box {
           height: 70%;
@@ -409,9 +413,13 @@ function SideProjectsPage() {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 22px;
           letter-spacing: 1px;
-          color: #111;
+          color: #8df6ff;
           flex-shrink: 0;
           user-select: none;
+          transition: color 0.2s ease;
+        }
+        .sc-info-bar-wrap.selected .sc-info-bar-count {
+          color: #111;
         }
 
         .sc-info-icon {
@@ -419,6 +427,10 @@ function SideProjectsPage() {
           align-items: center;
           margin-left: 14px;
           margin-right: 8px;
+          color: #8df6ff;
+          transition: color 0.2s ease;
+        }
+        .sc-info-bar-wrap.selected .sc-info-icon {
           color: #111;
         }
 
