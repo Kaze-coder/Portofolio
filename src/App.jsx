@@ -13,6 +13,7 @@ import ResumePage from './ResumePage'
 import PageTransition from './PageTransition'
 import Socials from './Socials'
 import AboutMe from './AboutMe'
+import VideoPreloader from './VideoPreloader'
 import './App.css'
 
 function BackgroundVideo({ intro, loop, ...props }) {
@@ -594,5 +595,10 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  return <AnimatedRoutes />
+  return (
+    <>
+      <VideoPreloader />
+      <AnimatedRoutes />
+    </>
+  )
 }

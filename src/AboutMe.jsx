@@ -107,7 +107,7 @@ export default function AboutMe() {
 
   return (
     <div id="menu-screen">
-      <video src={bgVideo} autoPlay loop muted playsInline />
+      <video src={bgVideo} preload="auto" autoPlay loop muted playsInline />
       {revealed && <div className="sc-dim" />}
       {revealed && (
         <div className={`sc-reveal-panel${mounted ? " mounted" : ""}`}>
