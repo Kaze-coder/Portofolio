@@ -320,6 +320,55 @@ export default function ResumePage({ src }) {
           transform: translateX(4px);
           background: rgba(12, 26, 94, 1);
         }
+
+        /* Project rows with hover-expand VISIT/DEMO buttons */
+        .resume-proj-row {
+          display: flex;
+          flex-direction: column;
+        }
+        .resume-proj-row .resume-detail-row {
+          min-height: 48px;
+        }
+        .resume-proj-actions {
+          display: flex;
+          gap: 8px;
+          margin: 4px 0 0 50px;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transform: translateY(-4px);
+          transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease 0.06s, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), margin 0.28s ease;
+        }
+        .resume-proj-row:hover .resume-proj-actions,
+        .resume-proj-row:focus-within .resume-proj-actions {
+          max-height: 42px;
+          opacity: 1;
+          transform: translateY(0);
+          margin: 4px 0 2px 50px;
+        }
+        .resume-proj-btn {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 16px;
+          letter-spacing: 2px;
+          padding: 4px 16px 2px;
+          color: #06133b;
+          background: #8df6ff;
+          clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 100%, 7px 100%);
+          text-decoration: none;
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+        .resume-proj-btn:hover {
+          background: #fff;
+          color: #c4001a;
+        }
+        .resume-proj-btn-demo {
+          background: #ff5a75;
+          color: #fff;
+        }
+        .resume-proj-btn-demo:hover {
+          background: #fff;
+          color: #c4001a;
+        }
         .resume-detail-row-index {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 26px;
@@ -493,26 +542,40 @@ export default function ResumePage({ src }) {
             </div>
 
             <div className="resume-detail-list">
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">01</div>
-                <div className="resume-detail-row-title">PRDly — PRD Generator</div>
-                <div className="resume-detail-status">TypeScript</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">02</div>
-                <div className="resume-detail-row-title">Website LAS</div>
-                <div className="resume-detail-status">HTML/CSS</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">03</div>
-                <div className="resume-detail-row-title">Aplikasi Kasir Desktop</div>
-                <div className="resume-detail-status">VB .NET</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">04</div>
-                <div className="resume-detail-row-title">Game Edukasi</div>
-                <div className="resume-detail-status">JavaScript</div>
-              </div>
+              {[
+                { title: "PRDly — PRD Generator", status: "TypeScript", href: "https://github.com/Kaze-coder/PRDly", demo: "https://prd-ly.vercel.app" },
+                { title: "Website LAS", status: "HTML/CSS", href: "https://github.com/Kaze-coder/website-las", demo: "https://website-las.vercel.app" },
+                { title: "Aplikasi Kasir Desktop", status: "VB .NET", href: "https://github.com/Kaze-coder/aplikasi-kasir-desktop", demo: null },
+                { title: "Game Edukasi", status: "JavaScript", href: "https://github.com/Kaze-coder/game-edukasi", demo: null },
+              ].map((proj, i) => (
+                <div className="resume-proj-row" key={proj.title}>
+                  <div className="resume-detail-row">
+                    <div className="resume-detail-row-index">{String(i + 1).padStart(2, '0')}</div>
+                    <div className="resume-detail-row-title">{proj.title}</div>
+                    <div className="resume-detail-status">{proj.status}</div>
+                  </div>
+                  <div className="resume-proj-actions">
+                    <a
+                      className="resume-proj-btn"
+                      href={proj.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      VISIT
+                    </a>
+                    {proj.demo && (
+                      <a
+                        className="resume-proj-btn resume-proj-btn-demo"
+                        href={proj.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        DEMO
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="resume-detail-bottom">
