@@ -18,24 +18,24 @@ const MAIN_IMAGES = [mainm, mainm2, mainf];
 
 const REVEAL_CONTENT = [
   {
-    upper: [`${profile.name}`, `Focus: AI Engineer`],
-    lower: `Location: Bogor, Indonesia`,
+    upper: [`${profile.name}`, `Focus: Web Development & AI`],
+    lower: `SMK Student — Bogor, Indonesia`,
   },
   {
     upper: [
-      `Languages: Python, C++`,
-      `Core Stack: Python, NumPy, Pandas, PyTorch`,
-      `Learning: ML fundamentals and deep learning`,
+      `Languages: Python, PHP, JavaScript, TypeScript`,
+      `Backend: Laravel — Frontend: Next.js & React`,
+      `Exploring: REST APIs & AI integration`,
     ],
-    lower: "Building to understand, not treating models as black boxes",
+    lower: "Building web that is powerful and comfortable to use",
   },
   {
     upper: [
-      `Mathematics for Machine Learning`,
-      `Deep Learning Architectures`,
-      `Reinforcement Learning`,
+      `Laravel & backend PHP development`,
+      `Modern frontend with Next.js & React`,
+      `Machine learning & AI fundamentals`,
     ],
-    lower: "Current focus areas in AI/ML journey",
+    lower: "Learning something new every day",
   },
 ];
 
@@ -50,8 +50,8 @@ const ITEMS = [
     id: "about", label: "ABOUT ME", handle: profile.username, href: profile.links[0].href, icon: <User size={22} />, barIcon: icon1, bars: 1, newBars: [0], counts: ["1"],
     links: [profile.links[0].href],
     stats: [
-      { tag: "Status", value: profile.title, color: "#4a8fff" },
-      { tag: "Focus", value: "AI/ML", color: "#e8c100" },
+      { tag: "Status", value: "SMK Student", color: "#4a8fff" },
+      { tag: "Focus", value: "Web & AI", color: "#e8c100" },
     ],
   },
   {
@@ -59,6 +59,7 @@ const ITEMS = [
     links: profile.techStack.languages,
     stats: [
       { tag: "LANGS", value: profile.techStack.languages.length, color: "#e8c100" },
+      { tag: "STACK", value: profile.techStack.web.length, color: "#ff6b6b" },
       { tag: "TOOLS", value: profile.techStack.tools.length, color: "#4a8fff" },
     ],
   },
@@ -66,7 +67,7 @@ const ITEMS = [
     id: "learning", label: "CURRENTLY LEARNING", handle: "Progress", href: profile.links[0].href, icon: <BookOpen size={22} />, barIcon: icon3, bars: profile.learning.length, newBars: [0, 1, 2], counts: profile.learning,
     links: profile.learning,
     stats: [
-      { tag: "AREAS", value: "4", color: "#ff6b6b" },
+      { tag: "AREAS", value: profile.learning.length, color: "#ff6b6b" },
       { tag: "DEPTH", value: "Deep", color: "#4ecdc4" },
     ],
   },

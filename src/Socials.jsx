@@ -24,7 +24,7 @@ const ITEMS = [
     id: "github", label: "GITHUB", handle: "@Kaze-coder", href: "https://github.com/Kaze-coder", icon: <FolderGit size={22} />, barIcon: icon1,
     details: [
       { label: "USER", value: "Kaze-coder", icon: <User size={24} /> },
-      { label: "ROLE", value: "AI Engineer", icon: <Bot size={24} /> },
+      { label: "ROLE", value: "Web & AI Developer", icon: <Bot size={24} /> },
       { label: "LOC", value: "Bogor, Indonesia", icon: <MapPin size={24} /> }
     ]
     ,
@@ -34,7 +34,7 @@ const ITEMS = [
     id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <Briefcase size={22} />, barIcon: icon2,
     details: [
       { label: "USER", value: "Fabiansyah Putra", icon: <User size={24} /> },
-      { label: "ROLE", value: "AI Engineer", icon: <Bot size={24} /> },
+      { label: "ROLE", value: "Web & AI Developer", icon: <Bot size={24} /> },
       { label: "STAT", value: "Active", icon: <Sparkles size={24} /> }
     ]
     ,
