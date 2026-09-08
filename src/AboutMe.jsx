@@ -19,7 +19,7 @@ const MAIN_IMAGES = [mainm, mainm2, mainf];
 const REVEAL_CONTENT = [
   {
     upper: [`${profile.name}`, `Focus: Web Development & AI`],
-    lower: `SMK Student — Bogor, Indonesia`,
+    lower: `Location: Bogor, Indonesia`,
   },
   {
     upper: [
