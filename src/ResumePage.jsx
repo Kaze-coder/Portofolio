@@ -2,43 +2,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ITEMS = [
-  { id: "i", badge: "I", title: "GITHUB", subtitle: "Repositories / Activity", rank: 3 },
-  { id: "ii", badge: "II", title: "SKILLS", subtitle: "Languages & Frameworks", rank: 4 },
+  { id: "i", badge: "I", title: "SKILLS", subtitle: "Languages & Frameworks", rank: 3 },
+  { id: "ii", badge: "II", title: "EDUCATION", subtitle: "Academic Journey", rank: 4 },
   { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Featured Work", rank: 5 },
-  { id: "iv", badge: "IV", title: "CONTRIBUTIONS", subtitle: "Community Impact", rank: 2 },
+  { id: "iv", badge: "IV", title: "CERTIFICATE", subtitle: "Achievements & Training", rank: 2 },
 ];
 
 export default function ResumePage({ src }) {
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchGitHubData = async () => {
-      try {
-        const response = await fetch('https://api.github.com/users/Kaze-coder/repos?sort=updated&per_page=4');
-        const data = await response.json();
-        const formattedRepos = data.map((repo, idx) => ({
-          index: String(idx + 1).padStart(2, '0'),
-          title: repo.name,
-          status: repo.language || 'TypeScript'
-        }));
-        setRepos(formattedRepos);
-      } catch (error) {
-        console.error('Error fetching GitHub data:', error);
-        setRepos([
-          { index: "01", title: "AI/ML Project", status: "Python" },
-          { index: "02", title: "Web App", status: "React" },
-          { index: "03", title: "Data Analysis", status: "Python" },
-          { index: "04", title: "Portfolio", status: "React" },
-        ]);
-      }
-      setLoading(false);
-    };
-    fetchGitHubData();
-  }, []);
 
   useEffect(() => {
     const v = document.querySelectorAll('video');
@@ -436,26 +409,39 @@ export default function ResumePage({ src }) {
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
               <div className="resume-detail-top-index">01</div>
-              <div className="resume-detail-top-title">GITHUB REPOS</div>
-              <div className="resume-detail-top-progress">{repos.length}/∞</div>
+              <div className="resume-detail-top-title">TECH ARSENAL</div>
+              <div className="resume-detail-top-progress">12/∞</div>
             </div>
 
             <div className="resume-detail-list">
-              {repos.map((row) => (
-                <div className="resume-detail-row" key={row.index}>
-                  <div className="resume-detail-row-index">{row.index}</div>
-                  <div className="resume-detail-row-title">{row.title}</div>
-                  <div className="resume-detail-status">{row.status}</div>
-                </div>
-              ))}
+              <div className="resume-detail-row">
+                <div className="resume-detail-row-index">01</div>
+                <div className="resume-detail-row-title">HTML / CSS / JavaScript</div>
+                <div className="resume-detail-status">Advanced</div>
+              </div>
+              <div className="resume-detail-row">
+                <div className="resume-detail-row-index">02</div>
+                <div className="resume-detail-row-title">PHP / Laravel</div>
+                <div className="resume-detail-status">Proficient</div>
+              </div>
+              <div className="resume-detail-row">
+                <div className="resume-detail-row-index">03</div>
+                <div className="resume-detail-row-title">TypeScript / Next.js / React</div>
+                <div className="resume-detail-status">Proficient</div>
+              </div>
+              <div className="resume-detail-row">
+                <div className="resume-detail-row-index">04</div>
+                <div className="resume-detail-row-title">Python / AI Integration</div>
+                <div className="resume-detail-status">Advanced</div>
+              </div>
             </div>
 
             <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">DETAILS</div>
+              <div className="resume-detail-bottom-title">SPECIALIZATION</div>
               <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Showcase active projects and contributions across multiple<br />&nbsp;&nbsp;technologies.</div>
-                <div className="resume-detail-bullet">- Track repository statistics, languages, and engagement<br />&nbsp;&nbsp;metrics.</div>
-                <div className="resume-detail-bullet">- Highlight work ready for review and collaboration.</div>
+                <div className="resume-detail-bullet">- Building full-stack web apps with Laravel, Next.js, and modern<br />&nbsp;&nbsp;JavaScript tooling.</div>
+                <div className="resume-detail-bullet">- Integrating AI services and REST APIs into web products.</div>
+                <div className="resume-detail-bullet">- Crafting interfaces that are fast, accessible, and comfortable<br />&nbsp;&nbsp;to use.</div>
               </div>
             </div>
           </div>
@@ -465,39 +451,29 @@ export default function ResumePage({ src }) {
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
               <div className="resume-detail-top-index">02</div>
-              <div className="resume-detail-top-title">TECH ARSENAL</div>
-              <div className="resume-detail-top-progress">12/∞</div>
+              <div className="resume-detail-top-title">ACADEMIC JOURNEY</div>
+              <div className="resume-detail-top-progress">2/∞</div>
             </div>
 
             <div className="resume-detail-list">
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">01</div>
-                <div className="resume-detail-row-title">Python</div>
-                <div className="resume-detail-status">Advanced</div>
+                <div className="resume-detail-row-title">SMK — Rekayasa Perangkat Lunak</div>
+                <div className="resume-detail-status">Current</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">02</div>
-                <div className="resume-detail-row-title">C++</div>
-                <div className="resume-detail-status">Proficient</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">03</div>
-                <div className="resume-detail-row-title">AI/ML Libraries</div>
-                <div className="resume-detail-status">Proficient</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">04</div>
-                <div className="resume-detail-row-title">Numpy/Pandas</div>
-                <div className="resume-detail-status">Advanced</div>
+                <div className="resume-detail-row-title">Self-Taught Web & AI Development</div>
+                <div className="resume-detail-status">Ongoing</div>
               </div>
             </div>
 
             <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">SPECIALIZATION</div>
+              <div className="resume-detail-bottom-title">FOCUS</div>
               <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Implementing high-performance AI algorithms using C++ and<br />&nbsp;&nbsp;Python for academic projects.</div>
-                <div className="resume-detail-bullet">- Utilizing NumPy and pandas to build and analyze scalable data<br />&nbsp;&nbsp;processing pipelines.</div>
-                <div className="resume-detail-bullet">- Exploring low-level hardware optimization to improve the<br />&nbsp;&nbsp;efficiency of ML architectures.</div>
+                <div className="resume-detail-bullet">- Software engineering fundamentals: clean code, version control,<br />&nbsp;&nbsp;and collaborative development.</div>
+                <div className="resume-detail-bullet">- Hands-on web development with PHP, Laravel, JavaScript, and<br />&nbsp;&nbsp;modern frameworks.</div>
+                <div className="resume-detail-bullet">- Continuous learning in AI engineering through online courses<br />&nbsp;&nbsp;and personal projects.</div>
               </div>
             </div>
           </div>
@@ -514,23 +490,23 @@ export default function ResumePage({ src }) {
             <div className="resume-detail-list">
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">01</div>
-                <div className="resume-detail-row-title">Computer Vision (Hand Tracker)</div>
-                <div className="resume-detail-status">Python</div>
+                <div className="resume-detail-row-title">PRDly — PRD Generator</div>
+                <div className="resume-detail-status">TypeScript</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">02</div>
-                <div className="resume-detail-row-title">Image Classification AI</div>
-                <div className="resume-detail-status">Python</div>
+                <div className="resume-detail-row-title">Website LAS</div>
+                <div className="resume-detail-status">HTML/CSS</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">03</div>
-                <div className="resume-detail-row-title">Portfolio Website</div>
-                <div className="resume-detail-status">React</div>
+                <div className="resume-detail-row-title">Aplikasi Kasir Desktop</div>
+                <div className="resume-detail-status">VB .NET</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">04</div>
-                <div className="resume-detail-row-title">ML Model Suite</div>
-                <div className="resume-detail-status">Python</div>
+                <div className="resume-detail-row-title">Game Edukasi</div>
+                <div className="resume-detail-status">JavaScript</div>
               </div>
             </div>
 
@@ -549,39 +525,29 @@ export default function ResumePage({ src }) {
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
               <div className="resume-detail-top-index">04</div>
-              <div className="resume-detail-top-title">CONTRIBUTIONS</div>
-              <div className="resume-detail-top-progress">8/∞</div>
+              <div className="resume-detail-top-title">CERTIFICATES</div>
+              <div className="resume-detail-top-progress">2/∞</div>
             </div>
 
             <div className="resume-detail-list">
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">01</div>
-                <div className="resume-detail-row-title">Open Source Projects</div>
-                <div className="resume-detail-status">Active</div>
+                <div className="resume-detail-row-title">Web Development Fundamentals</div>
+                <div className="resume-detail-status">Certified</div>
               </div>
               <div className="resume-detail-row">
                 <div className="resume-detail-row-index">02</div>
-                <div className="resume-detail-row-title">Code Reviews</div>
-                <div className="resume-detail-status">Regular</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">03</div>
-                <div className="resume-detail-row-title">Technical Writing</div>
-                <div className="resume-detail-status">Ongoing</div>
-              </div>
-              <div className="resume-detail-row">
-                <div className="resume-detail-row-index">04</div>
-                <div className="resume-detail-row-title">Community Events</div>
-                <div className="resume-detail-status">Speaker</div>
+                <div className="resume-detail-row-title">AI Engineering Essentials</div>
+                <div className="resume-detail-status">Certified</div>
               </div>
             </div>
 
             <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">IMPACT</div>
+              <div className="resume-detail-bottom-title">GROWTH</div>
               <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Contributing to meaningful projects that improve developer<br />&nbsp;&nbsp;experience.</div>
-                <div className="resume-detail-bullet">- Sharing knowledge through documentation and community<br />&nbsp;&nbsp;engagement.</div>
-                <div className="resume-detail-bullet">- Mentoring junior developers and fostering collaborative<br />&nbsp;&nbsp;growth.</div>
+                <div className="resume-detail-bullet">- Continuous upskilling through structured courses and<br />&nbsp;&nbsp;hands-on training programs.</div>
+                <div className="resume-detail-bullet">- Applying certified skills directly into real portfolio<br />&nbsp;&nbsp;projects.</div>
+                <div className="resume-detail-bullet">- Always hunting for the next thing to learn in web and AI.</div>
               </div>
             </div>
           </div>
