@@ -347,7 +347,8 @@ function SideProjectsPage() {
         .sc-bar-outer.active .sc-clip-overlay {
           clip-path: polygon(22% 0, 100% 0, calc(100% - 14px) 100%, calc(22% + 138px) 100%);
         }
-        .sc-clip-overlay .sc-label,
+        .sc-bar-outer.active .sc-clip-overlay .sc-label,
+        .sc-bar-outer .sc-clip-overlay .sc-label,
         .sc-clip-overlay .sc-role { color: #111; }
 
         /* ── Info Bars (Right Side Details) ── */
