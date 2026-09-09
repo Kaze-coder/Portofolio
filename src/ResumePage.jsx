@@ -347,31 +347,44 @@ export default function ResumePage({ src }) {
         }
 
         .resume-proj-btn {
+          position: relative;
+          isolation: isolate;
           font-family: 'Bebas Neue', sans-serif;
           font-size: 16px;
           letter-spacing: 2px;
-          padding: 8px 24px 6px;
+          padding: 8px 22px 6px;
           color: #8df6ff;
-          background: #0b113d;
-          box-shadow: inset 0 0 0 1px rgba(141, 246, 255, 0.22);
-          clip-path: polygon(12px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+          background: transparent;
+          clip-path: polygon(10px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
           transform: skewX(-6deg);
           text-decoration: none;
-          transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+          transition: color 0.18s ease;
         }
-        .resume-proj-btn:hover {
+        .resume-proj-btn::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 3px;
           background: #8df6ff;
-          color: #06133b;
-          transform: skewX(-6deg) translateX(3px);
         }
-        .resume-proj-btn-demo {
-          color: #ff9db0;
-          box-shadow: inset 0 0 0 1px rgba(214, 50, 50, 0.4);
+        .resume-proj-btn::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: #8df6ff;
+          transform: scaleX(0);
+          transform-origin: left center;
+          z-index: -1;
+          transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .resume-proj-btn-demo:hover {
-          background: var(--p3-red-accent);
-          color: #fff;
-        }
+        .resume-proj-btn:hover { color: #06133b; }
+        .resume-proj-btn:hover::after { transform: scaleX(1); }
+        .resume-proj-btn-demo { color: #ff9db0; }
+        .resume-proj-btn-demo::before,
+        .resume-proj-btn-demo::after { background: var(--p3-red-accent); }
+        .resume-proj-btn-demo:hover { color: #fff; }
         .resume-detail-row-index {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 26px;
