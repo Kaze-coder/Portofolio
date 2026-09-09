@@ -257,6 +257,7 @@ export default function ResumePage({ src }) {
             inset 0 0 0 1px rgba(133, 244, 255, 0.16),
             var(--p3-panel-shadow);
           overflow: hidden;
+          pointer-events: all;
         }
         .resume-detail-panel::before {
           content: "";
