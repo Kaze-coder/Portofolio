@@ -332,35 +332,37 @@ export default function ResumePage({ src }) {
         }
         .resume-proj-actions {
           display: flex;
+          justify-content: flex-end;
           gap: 10px;
-          margin: 0 0 0 50px;
+          margin: 0 8px 0 50px;
           max-height: 0;
           opacity: 0;
           overflow: hidden;
           transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease, margin 0.28s ease;
         }
         .resume-proj-row:hover .resume-proj-actions {
-          max-height: 44px;
+          max-height: 50px;
           opacity: 1;
-          margin: 6px 0 2px 50px;
+          margin: 8px 8px 2px 50px;
         }
 
         .resume-proj-btn {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 15px;
-          letter-spacing: 2.5px;
-          padding: 6px 18px 4px;
+          font-size: 16px;
+          letter-spacing: 2px;
+          padding: 8px 24px 6px;
           color: #8df6ff;
           background: #0b113d;
           box-shadow: inset 0 0 0 1px rgba(141, 246, 255, 0.22);
-          clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+          clip-path: polygon(12px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+          transform: skewX(-6deg);
           text-decoration: none;
           transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
         }
         .resume-proj-btn:hover {
           background: #8df6ff;
           color: #06133b;
-          transform: translateX(3px);
+          transform: skewX(-6deg) translateX(3px);
         }
         .resume-proj-btn-demo {
           color: #ff9db0;
