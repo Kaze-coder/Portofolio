@@ -332,43 +332,46 @@ export default function ResumePage({ src }) {
         }
         .resume-proj-actions {
           display: flex;
-          gap: 8px;
-          margin: 4px 0 0 50px;
+          gap: 10px;
+          margin: 0 0 0 50px;
           max-height: 0;
           opacity: 0;
           overflow: hidden;
-          transform: translateY(-4px);
-          transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease 0.06s, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), margin 0.28s ease;
+          transform: translateY(-6px);
+          transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease 0.08s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), margin 0.3s ease;
         }
-        .resume-proj-row:hover .resume-proj-actions,
-        .resume-proj-row:focus-within .resume-proj-actions {
-          max-height: 42px;
+        .resume-proj-row:hover .resume-proj-actions {
+          max-height: 44px;
           opacity: 1;
           transform: translateY(0);
-          margin: 4px 0 2px 50px;
+          margin: 6px 0 2px 50px;
         }
         .resume-proj-btn {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 16px;
+          font-size: 15px;
           letter-spacing: 2px;
-          padding: 4px 16px 2px;
-          color: #06133b;
-          background: #8df6ff;
-          clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 100%, 7px 100%);
+          padding: 5px 18px 3px;
+          color: #8df6ff;
+          background: #0b113d;
+          box-shadow: inset 0 0 0 1px rgba(141, 246, 255, 0.45);
+          clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
           text-decoration: none;
-          transition: background 0.15s ease, color 0.15s ease;
+          transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
         }
         .resume-proj-btn:hover {
-          background: #fff;
-          color: #c4001a;
+          background: #8df6ff;
+          color: #06133b;
+          transform: translateX(3px);
+          box-shadow: 4px 4px 0 var(--p3-red-accent);
         }
         .resume-proj-btn-demo {
-          background: #ff5a75;
-          color: #fff;
+          color: #ff9db0;
+          box-shadow: inset 0 0 0 1px rgba(214, 50, 50, 0.55);
         }
         .resume-proj-btn-demo:hover {
-          background: #fff;
-          color: #c4001a;
+          background: var(--p3-red-accent);
+          color: #fff;
+          box-shadow: 4px 4px 0 #8df6ff;
         }
         .resume-detail-row-index {
           font-family: 'Bebas Neue', sans-serif;
