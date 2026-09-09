@@ -332,90 +332,43 @@ export default function ResumePage({ src }) {
         }
         .resume-proj-actions {
           display: flex;
-          gap: 12px;
+          gap: 10px;
           margin: 0 0 0 50px;
           max-height: 0;
           opacity: 0;
           overflow: hidden;
-          transform: translateX(-10px);
-          transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), margin 0.3s ease;
+          transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease, margin 0.28s ease;
         }
         .resume-proj-row:hover .resume-proj-actions {
-          max-height: 52px;
+          max-height: 44px;
           opacity: 1;
-          transform: translateX(0);
-          margin: 7px 0 2px 50px;
-        }
-
-        @keyframes resume-btn-in {
-          0%   { opacity: 0; transform: translateX(-18px); }
-          70%  { opacity: 1; transform: translateX(3px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        .resume-proj-row:hover .resume-proj-btn {
-          animation: resume-btn-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-        .resume-proj-row:hover .resume-proj-btn:nth-child(2) {
-          animation-delay: 0.08s;
+          margin: 6px 0 2px 50px;
         }
 
         .resume-proj-btn {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
           font-family: 'Bebas Neue', sans-serif;
           font-size: 15px;
           letter-spacing: 2.5px;
-          padding: 7px 20px 5px 24px;
+          padding: 6px 18px 4px;
           color: #8df6ff;
           background: #0b113d;
-          box-shadow: inset 0 0 0 1px rgba(141, 246, 255, 0.28);
-          clip-path: polygon(14px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+          box-shadow: inset 0 0 0 1px rgba(141, 246, 255, 0.22);
+          clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
           text-decoration: none;
-          transition: background 0.15s ease, color 0.15s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
-        }
-        .resume-proj-btn::before {
-          content: '';
-          position: absolute;
-          left: 0; top: 0; bottom: 0;
-          width: 7px;
-          background: #8df6ff;
-          transition: width 0.18s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .resume-proj-arrow {
-          font-family: 'Barlow Condensed', sans-serif;
-          font-size: 17px;
-          line-height: 0;
-          transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
         }
         .resume-proj-btn:hover {
           background: #8df6ff;
           color: #06133b;
-          transform: translateX(4px);
-          box-shadow: 6px 6px 0 var(--p3-red-accent), inset 0 0 0 1px #8df6ff;
-        }
-        .resume-proj-btn:hover::before {
-          width: 12px;
-          background: #06133b;
-        }
-        .resume-proj-btn:hover .resume-proj-arrow {
           transform: translateX(3px);
         }
         .resume-proj-btn-demo {
           color: #ff9db0;
-          box-shadow: inset 0 0 0 1px rgba(214, 50, 50, 0.5);
-        }
-        .resume-proj-btn-demo::before {
-          background: var(--p3-red-accent);
+          box-shadow: inset 0 0 0 1px rgba(214, 50, 50, 0.4);
         }
         .resume-proj-btn-demo:hover {
           background: var(--p3-red-accent);
           color: #fff;
-          box-shadow: 6px 6px 0 #8df6ff, inset 0 0 0 1px var(--p3-red-accent);
-        }
-        .resume-proj-btn-demo:hover::before {
-          background: #fff;
         }
         .resume-detail-row-index {
           font-family: 'Bebas Neue', sans-serif;
@@ -609,7 +562,7 @@ export default function ResumePage({ src }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      VISIT <span className="resume-proj-arrow">▸</span>
+                      VISIT
                     </a>
                     {proj.demo && (
                       <a
@@ -618,7 +571,7 @@ export default function ResumePage({ src }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        DEMO <span className="resume-proj-arrow">▸</span>
+                        DEMO
                       </a>
                     )}
                   </div>
