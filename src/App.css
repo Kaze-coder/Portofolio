@@ -22,9 +22,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Runtime GPU sharpen (SVG feConvolveMatrix in index.html) + slight
-     contrast/saturation lift. No video re-encode involved. */
-  filter: url(#bg-sharpen) contrast(1.06) saturate(1.05);
+  /* Stronger runtime sharpen for About/Socials/SideProjects backgrounds */
+  filter: url(#bg-sharpen) url(#bg-sharpen) contrast(1.12) saturate(1.08);
 }
 
 #main {
