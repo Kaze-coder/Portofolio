@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
-import { FolderGit, Briefcase, Camera, User, Bot, MapPin, Sparkles, Palette, Flame } from "lucide-react";
+import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import { User, Bot, MapPin, Sparkles, Palette, Flame } from "lucide-react";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
@@ -21,7 +22,7 @@ const ROLES = [
 
 const ITEMS = [
   {
-    id: "github", label: "GITHUB", handle: "@Kaze-coder", href: "https://github.com/Kaze-coder", icon: <FolderGit size={22} />, barIcon: icon1,
+    id: "github", label: "GITHUB", handle: "@Kaze-coder", href: "https://github.com/Kaze-coder", icon: <SiGithub size={22} color="#ffffff" />, barIcon: icon1,
     details: [
       { label: "USER", value: "Kaze-coder", icon: <User size={24} /> },
       { label: "ROLE", value: "Web & AI Developer", icon: <Bot size={24} /> },
@@ -31,7 +32,7 @@ const ITEMS = [
     stats: [],
   },
   {
-    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <Briefcase size={22} />, barIcon: icon2,
+    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <SiLinkedin size={22} color="#0A66C2" />, barIcon: icon2,
     details: [
       { label: "USER", value: "Fabiansyah Putra", icon: <User size={24} /> },
       { label: "ROLE", value: "Web & AI Developer", icon: <Bot size={24} /> },
@@ -41,7 +42,7 @@ const ITEMS = [
     stats: [],
   },
   {
-    id: "instagram", label: "INSTAGRAM", handle: "kazevalkhov", href: "https://www.instagram.com/kazevalkhov/", icon: <Camera size={22} />, barIcon: icon3,
+    id: "instagram", label: "INSTAGRAM", handle: "kazevalkhov", href: "https://www.instagram.com/kazevalkhov/", icon: <SiInstagram size={22} color="#E4405F" />, barIcon: icon3,
     details: [
       { label: "USER", value: "kazevalkhov", icon: <User size={24} /> },
       { label: "TYPE", value: "Personal", icon: <Palette size={24} /> },
