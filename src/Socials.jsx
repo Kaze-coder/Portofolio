@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
-import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import { SiGithub, SiInstagram } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
 import { User, Bot, MapPin, Sparkles, Palette, Flame } from "lucide-react";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
@@ -32,7 +33,7 @@ const ITEMS = [
     stats: [],
   },
   {
-    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <SiLinkedin size={22} color="#0A66C2" />, barIcon: icon2,
+    id: "linkedin", label: "LINKEDIN", handle: "Fabiansyah Putra", href: "https://www.linkedin.com/in/mohammad-hussain-546315402/", icon: <FaLinkedin size={22} color="#0A66C2" />, barIcon: icon2,
     details: [
       { label: "USER", value: "Fabiansyah Putra", icon: <User size={24} /> },
       { label: "ROLE", value: "Web & AI Developer", icon: <Bot size={24} /> },
