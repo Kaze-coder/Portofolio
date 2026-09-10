@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   </head>
   <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <!-- Runtime sharpen kernel for background videos (no re-encode needed) -->
+      <filter id="bg-sharpen">
+        <feConvolveMatrix order="3" preserveAlpha="true"
+          kernelMatrix="0 -0.4 0 -0.4 2.6 -0.4 0 -0.4 0" />
+      </filter>
+    </svg>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

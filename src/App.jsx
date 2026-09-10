@@ -27,8 +27,9 @@ function BackgroundVideo({ intro, loop, ...props }) {
         autoPlay
         muted
         playsInline
-        style={{ 
+        style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+          imageRendering: 'pixelated',
           zIndex: showLoop ? 1 : 2,
           opacity: showLoop ? 0 : 1,
           transition: 'opacity 0.4s ease-in-out'
@@ -42,8 +43,9 @@ function BackgroundVideo({ intro, loop, ...props }) {
         loop
         muted
         playsInline
-        style={{ 
+        style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+          imageRendering: 'pixelated',
           zIndex: showLoop ? 2 : 1,
           opacity: showLoop ? 1 : 0,
           transition: 'opacity 0.4s ease-in-out'
