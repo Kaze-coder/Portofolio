@@ -29,7 +29,7 @@ function BackgroundVideo({ intro, loop, ...props }) {
         playsInline
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-          imageRendering: 'pixelated',
+          filter: 'url(#bg-sharpen) contrast(1.06) saturate(1.05)',
           zIndex: showLoop ? 1 : 2,
           opacity: showLoop ? 0 : 1,
           transition: 'opacity 0.4s ease-in-out'
@@ -45,7 +45,7 @@ function BackgroundVideo({ intro, loop, ...props }) {
         playsInline
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-          imageRendering: 'pixelated',
+          filter: 'url(#bg-sharpen) contrast(1.06) saturate(1.05)',
           zIndex: showLoop ? 2 : 1,
           opacity: showLoop ? 1 : 0,
           transition: 'opacity 0.4s ease-in-out'

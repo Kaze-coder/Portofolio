@@ -63,7 +63,7 @@ export default function ResumePage({ src }) {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          image-rendering: pixelated;
+          filter: url(#bg-sharpen) contrast(1.06) saturate(1.05);
         }
 
         @keyframes resume-entry-reveal {
