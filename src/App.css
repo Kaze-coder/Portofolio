@@ -22,8 +22,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Stronger runtime sharpen for About/Socials/SideProjects backgrounds */
-  filter: url(#bg-sharpen) url(#bg-sharpen) contrast(1.12) saturate(1.08);
+  /* Denoise-then-sharpen: blur 0.5 kills block artifacts, kernel 2.2 restores
+     edge crispness. Contrast/saturation micro-lift for perceived HD. */
+  filter: url(#bg-hd) contrast(1.05) saturate(1.04);
 }
 
 #main {
