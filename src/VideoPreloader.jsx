@@ -1,6 +1,6 @@
-import aboutVideo from './assets/AboutMe.mp4'
-import resumeVideo from './assets/Resume.mp4'
-import socialsVideo from './assets/Socials.mp4'
+import aboutVideo from './assets/AboutsMe.mp4'
+import resumeVideo from './assets/Resumes.mp4'
+import socialsVideo from './assets/Social.mp4'
 
 // Buffers the About / Resume / Socials backgrounds while the user sits on
 // the main menu, so page navigation swaps to an already-cached video.

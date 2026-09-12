@@ -5,7 +5,7 @@ import { User, Cog, BookOpen } from "lucide-react";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
-import bgVideo from "./assets/AboutMe.mp4";
+import bgVideo from "./assets/AboutsMe.mp4";
 import icon1 from "./assets/icon1.png";
 import icon2 from "./assets/icon2.png";
 import icon3 from "./assets/icon3.png";
