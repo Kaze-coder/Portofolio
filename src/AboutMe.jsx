@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
 import { User, Cog, BookOpen } from "lucide-react";
+import {
+  SiPython, SiPhp, SiJavascript, SiTypescript, SiLaravel, SiNextdotjs,
+  SiReact, SiHtml5, SiCss, SiTailwindcss, SiMysql, SiNodedotjs, SiGit, SiGithub,
+} from "react-icons/si";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
@@ -16,26 +20,54 @@ import mainf from "./assets/mainf.jpeg";
 const CHARS = [char1, char2, char3];
 const MAIN_IMAGES = [mainm, mainm2, mainf];
 
+const TECH_ICONS = [
+  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { name: "CSS", icon: SiCss, color: "#1572B6" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "PHP", icon: SiPhp, color: "#777BB4" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+];
+
+const LEARNING_ICONS = [
+  { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "AI", icon: SiTypescript, color: "#3178C6" },
+];
+
 const REVEAL_CONTENT = [
   {
-    upper: [`${profile.name}`, `Focus: Web Development & AI`],
-    lower: `Location: Bogor, Indonesia`,
+    upper: [
+      `Halo, saya ${profile.name}.`,
+      `Siswa SMK yang suka ngoding dan bikin web`,
+      `yang bisa dipake orang lain — bukan cuma jalan di laptop sendiri.`,
+    ],
+    lower: `Fokus di Web Development & AI — Bogor, Indonesia`,
   },
   {
     upper: [
-      `Languages: Python, PHP, JavaScript, TypeScript`,
-      `Backend: Laravel — Frontend: Next.js & React`,
-      `Exploring: REST APIs & AI integration`,
+      `Mulai dari HTML/CSS iseng di lab sekolah,`,
+      `sekarang sering ngulik Laravel sampai Next.js.`,
+      `Terus penasaran: "kenapa kode ini bisa jalan?"`,
     ],
-    lower: "Building web that is powerful and comfortable to use",
+    lower: `Setiap project kecil = satu pelajaran baru`,
   },
   {
     upper: [
-      `Laravel & backend PHP development`,
-      `Modern frontend with Next.js & React`,
-      `Machine learning & AI fundamentals`,
+      `Belajar AI dari dasar — bukan cuma manggil API.`,
+      `Pengen ngerti apa yang terjadi di baliknya.`,
+      `Lambat tapi pasti, satu baris kode tiap hari.`,
     ],
-    lower: "Learning something new every day",
+    lower: `Lagi dalam proses — dan menikmati prosesnya`,
   },
 ];
 
@@ -124,11 +156,38 @@ export default function AboutMe() {
               </button>
             ))}
           </div>
-          <div className="sc-reveal-upper-bar">
-            {REVEAL_CONTENT[active].upper.map((line) => (
-              <div className="sc-reveal-upper-line" key={line}>{line}</div>
-            ))}
-          </div>
+          {active === 1 ? (
+            <div className="sc-reveal-upper-bar">
+              <div className="sc-tech-grid">
+                {TECH_ICONS.map((t) => (
+                  <div className="sc-tech-item" key={t.name}>
+                    <t.icon size={30} color={t.color} />
+                    <span className="sc-tech-name">{t.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : active === 2 ? (
+            <div className="sc-reveal-upper-bar">
+              {REVEAL_CONTENT[active].upper.map((line) => (
+                <div className="sc-reveal-upper-line" key={line}>{line}</div>
+              ))}
+              <div className="sc-learning-row">
+                {LEARNING_ICONS.map((t) => (
+                  <div className="sc-tech-item" key={t.name}>
+                    <t.icon size={26} color={t.color} />
+                    <span className="sc-tech-name">{t.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="sc-reveal-upper-bar">
+              {REVEAL_CONTENT[active].upper.map((line) => (
+                <div className="sc-reveal-upper-line" key={line}>{line}</div>
+              ))}
+            </div>
+          )}
           <div className="sc-reveal-lower-bar">{REVEAL_CONTENT[active].lower}</div>
         </div>
       )}
@@ -347,6 +406,34 @@ export default function AboutMe() {
           font-size: 20px;
           letter-spacing: 0.5px;
           line-height: 1.15;
+        }
+
+        /* Tech stack grid (brand icons) */
+        .sc-tech-grid {
+          display: grid;
+          grid-template-columns: repeat(5, auto);
+          gap: 18px 36px;
+          justify-content: center;
+          padding: 8px 0;
+        }
+        .sc-tech-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        .sc-tech-name {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 15px;
+          letter-spacing: 1.5px;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 1;
+        }
+        .sc-learning-row {
+          display: flex;
+          gap: 28px;
+          margin-top: 14px;
+          justify-content: center;
         }
         .sc-reveal-lower-bar {
           position: absolute;
