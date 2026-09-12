@@ -441,7 +441,7 @@ export default function AboutMe() {
           left: 0;
           top: 0;
           pointer-events: none;
-          z-index: 40;
+          z-index: 9999;
           opacity: 0;
           transform-origin: bottom left;
           background: #0b113d;
@@ -452,9 +452,8 @@ export default function AboutMe() {
         .hp-preview img {
           display: block;
           width: 100%;
-          height: 150px;
-          object-fit: cover;
-          object-position: top;
+          height: auto;
+          object-fit: contain;
           clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
         }
 

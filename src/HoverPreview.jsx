@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+
 /**
  * HoverPreview - inspired by React Bits "Hover Preview".
  * Wrap target text; a preview image follows the cursor with a spring
- * while hovering. Styled to match the Persona 3 design system
- * (skewed cut-corner frame, hard offset shadow, cyan accent edge).
+ * while hovering. The card is portaled to document.body so no ancestor
+ * clip-path/transform can cut it off.
  */
 export default function HoverPreview({ children, image, alt = "", width = 220 }) {
   const ref = useRef(null);
@@ -16,30 +18,35 @@ export default function HoverPreview({ children, image, alt = "", width = 220 })
   const sy = useSpring(y, { stiffness: 260, damping: 24, mass: 0.7 });
 
   const onMove = (e) => {
-    // Preview is position: fixed, so track the pointer in viewport space.
+    // Card lives in a portal at body level, so viewport coordinates are right.
     x.set(e.clientX + 18);
-    y.set(e.clientY - 170);
+    y.set(e.clientY - 320);
   };
 
   return (
-    <span
-      ref={ref}
-      className="hp-target"
-      onMouseEnter={() => setVisible(true)}
-      onMouseMove={onMove}
-      onMouseLeave={() => setVisible(false)}
-    >
-      {children}
-      <motion.span
-        className="hp-preview"
-        aria-hidden="true"
-        style={{ x: sx, y: sy, width }}
-        initial={false}
-        animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.72 }}
-        transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+    <>
+      <span
+        ref={ref}
+        className="hp-target"
+        onMouseEnter={() => setVisible(true)}
+        onMouseMove={onMove}
+        onMouseLeave={() => setVisible(false)}
       >
-        <img src={image} alt={alt} draggable="false" />
-      </motion.span>
-    </span>
+        {children}
+      </span>
+      {createPortal(
+        <motion.div
+          className="hp-preview"
+          aria-hidden="true"
+          style={{ x: sx, y: sy, width }}
+          initial={false}
+          animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.72 }}
+          transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <img src={image} alt={alt} draggable="false" />
+        </motion.div>,
+        document.body
+      )}
+    </>
   );
 }
