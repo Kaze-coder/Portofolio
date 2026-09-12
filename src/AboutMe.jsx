@@ -437,7 +437,7 @@ export default function AboutMe() {
           border-color: #8df6ff;
         }
         .hp-preview {
-          position: absolute;
+          position: fixed;
           left: 0;
           top: 0;
           pointer-events: none;

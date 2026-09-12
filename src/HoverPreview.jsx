@@ -16,9 +16,9 @@ export default function HoverPreview({ children, image, alt = "", width = 220 })
   const sy = useSpring(y, { stiffness: 260, damping: 24, mass: 0.7 });
 
   const onMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
-    x.set(e.clientX - rect.left);
-    y.set(e.clientY - rect.top);
+    // Preview is position: fixed, so track the pointer in viewport space.
+    x.set(e.clientX + 18);
+    y.set(e.clientY - 170);
   };
 
   return (
