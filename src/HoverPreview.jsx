@@ -19,8 +19,9 @@ export default function HoverPreview({ children, image, alt = "", width = 220 })
 
   const onMove = (e) => {
     // Card lives in a portal at body level, so viewport coordinates are right.
+    // Vertical offset centers the ~390px tall card on the cursor.
     x.set(e.clientX + 18);
-    y.set(e.clientY - 320);
+    y.set(e.clientY - 195);
   };
 
   return (
