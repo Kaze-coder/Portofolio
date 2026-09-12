@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "./portfolioData";
 import { User, Cog, BookOpen } from "lucide-react";
+import HoverPreview from "./HoverPreview";
+import photoPortofolio from "./assets/PhotoPortofolio.png";
 import {
   SiPython, SiPhp, SiJavascript, SiTypescript, SiLaravel, SiNextdotjs,
   SiReact, SiHtml5, SiCss, SiTailwindcss, SiMysql, SiNodedotjs, SiGit, SiGithub,
@@ -47,7 +49,7 @@ const LEARNING_ICONS = [
 const REVEAL_CONTENT = [
   {
     upper: [
-      `Halo, saya ${profile.name}.`,
+      `Halo, saya {NAME}.`,
       `Siswa SMK yang mengembangkan website`,
       `dan aplikasi berbasis web dengan standar kode yang rapi.`,
     ],
@@ -63,7 +65,7 @@ const REVEAL_CONTENT = [
   },
   {
     upper: [
-      `Belajar AI dari dasar — bukan cuma manggil API.`,
+      `Belajar AI dari dasar - bukan cuma manggil API.`,
       `Pengen ngerti apa yang terjadi di baliknya.`,
       `Lambat tapi pasti, satu baris kode tiap hari.`,
     ],
@@ -183,9 +185,18 @@ export default function AboutMe() {
             </div>
           ) : (
             <div className="sc-reveal-upper-bar">
-              {REVEAL_CONTENT[active].upper.map((line) => (
-                <div className="sc-reveal-upper-line" key={line}>{line}</div>
-              ))}
+              {REVEAL_CONTENT[active].upper.map((line) =>
+                line.includes("{NAME}") ? (
+                  <div className="sc-reveal-upper-line" key="intro-name">
+                    Halo, saya{" "}
+                    <HoverPreview image={photoPortofolio} alt="Fabiansyah Putra">
+                      <span className="hp-name">{profile.name}</span>
+                    </HoverPreview>
+                  </div>
+                ) : (
+                  <div className="sc-reveal-upper-line" key={line}>{line}</div>
+                )
+              )}
             </div>
           )}
           <div className="sc-reveal-lower-bar">{REVEAL_CONTENT[active].lower}</div>
@@ -408,6 +419,45 @@ export default function AboutMe() {
           line-height: 1.15;
         }
 
+        /* HoverPreview (name -> photo card) */
+        .hp-target {
+          position: relative;
+          display: inline-block;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+        .hp-name {
+          color: #8df6ff;
+          border-bottom: 2px solid rgba(141, 246, 255, 0.55);
+          padding-bottom: 1px;
+          transition: color 0.18s ease, border-color 0.18s ease;
+        }
+        .hp-target:hover .hp-name {
+          color: #d3fdff;
+          border-color: #8df6ff;
+        }
+        .hp-preview {
+          position: absolute;
+          left: 0;
+          top: 0;
+          pointer-events: none;
+          z-index: 40;
+          opacity: 0;
+          transform-origin: bottom left;
+          background: #0b113d;
+          padding: 7px;
+          box-shadow: 8px 8px 0 rgba(196, 0, 26, 0.9);
+          clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+        }
+        .hp-preview img {
+          display: block;
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          object-position: top;
+          clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+        }
+
         /* Tech stack grid (brand icons) */
         .sc-tech-grid {
           display: grid;
@@ -547,7 +597,7 @@ export default function AboutMe() {
         .sc-bar-outer:nth-child(2) { transition-delay: 80ms; }
         .sc-bar-outer:nth-child(3) { transition-delay: 160ms; }
 
-        /* red underlay — peeks out below the bar when active */
+        /* red underlay - peeks out below the bar when active */
         .sc-bar-red {
           position: absolute;
           top: 0; left: 0;
@@ -563,7 +613,7 @@ export default function AboutMe() {
         }
         .sc-bar-outer.active .sc-bar-red { opacity: 1; }
 
-        /* white fill — skewed parallelogram on the right 25% */
+        /* white fill - skewed parallelogram on the right 25% */
         .sc-bar-fill {
           position: absolute;
           inset: 0;

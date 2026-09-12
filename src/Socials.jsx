@@ -147,7 +147,7 @@ export default function Socials() {
         .sc-bar-outer:nth-child(2) { transition-delay: 80ms; }
         .sc-bar-outer:nth-child(3) { transition-delay: 160ms; }
 
-        /* red underlay — peeks out below the bar when active */
+        /* red underlay - peeks out below the bar when active */
         .sc-bar-red {
           position: absolute;
           top: 0; left: 0;
@@ -163,7 +163,7 @@ export default function Socials() {
         }
         .sc-bar-outer.active .sc-bar-red { opacity: 1; }
 
-        /* white fill — skewed parallelogram on the right 25% */
+        /* white fill - skewed parallelogram on the right 25% */
         .sc-bar-fill {
           position: absolute;
           inset: 0;

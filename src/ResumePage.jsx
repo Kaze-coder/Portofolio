@@ -560,7 +560,7 @@ export default function ResumePage({ src }) {
 
             <div className="resume-detail-list">
               {[
-                { title: "PRDly — PRD Generator", status: "TypeScript", href: "https://github.com/Kaze-coder/PRDly", demo: "https://prd-ly.vercel.app" },
+                { title: "PRDly - PRD Generator", status: "TypeScript", href: "https://github.com/Kaze-coder/PRDly", demo: "https://prd-ly.vercel.app" },
                 { title: "Website LAS", status: "HTML/CSS", href: "https://github.com/Kaze-coder/website-las", demo: "https://website-las.vercel.app" },
                 { title: "Aplikasi Kasir Desktop", status: "VB .NET", href: "https://github.com/Kaze-coder/aplikasi-kasir-desktop", demo: null },
                 { title: "Game Edukasi", status: "JavaScript", href: "https://github.com/Kaze-coder/game-edukasi", demo: null },

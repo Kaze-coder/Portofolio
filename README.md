@@ -1,14 +1,14 @@
-# 🧪 Fabiansyah Putra — Persona 3 Portfolio
+# 🧪 Fabiansyah Putra - Persona 3 Portfolio
 
-Portfolio pribadi bertema **Persona 3** (Atlus) — UI cyber-industrial dengan panel glassmorphism, bento-grid, video background, dan transisi halaman bergaya game.
+Portfolio pribadi bertema **Persona 3** (Atlus) - UI cyber-industrial dengan panel glassmorphism, bento-grid, video background, dan transisi halaman bergaya game.
 
 ## 🛠️ Tech Stack
 
 - **React 19** + **Vite 8**
-- **React Router DOM v7** — SPA routing
-- **Framer Motion v12** — transisi & animasi
-- **Vanilla CSS3** — custom properties, glassmorphism, tanpa framework CSS
-- **Express 5** — serve build production + SPA fallback
+- **React Router DOM v7** - SPA routing
+- **Framer Motion v12** - transisi & animasi
+- **Vanilla CSS3** - custom properties, glassmorphism, tanpa framework CSS
+- **Express 5** - serve build production + SPA fallback
 
 ## 🚀 Halaman
 
@@ -39,7 +39,7 @@ npm start        # Express → http://localhost:3000
 ## 📫 Kontak
 
 - GitHub: [@Kaze-coder](https://github.com/Kaze-coder)
-- LinkedIn: —
+- LinkedIn: -
 - Instagram: [@kazevalkhov](https://www.instagram.com/kazevalkhov/)
 
 ## 📜 Lisensi

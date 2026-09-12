@@ -4,7 +4,7 @@ export const profile = {
   title: "Web Developer & AI Student",
   bio: "Siswa SMK yang tertarik pada Web Development dan AI Engineering. Bekerja dengan Python, PHP, Laravel, JavaScript, TypeScript, dan Next.js untuk membangun web yang powerful dan nyaman digunakan.",
   intro:
-    "Siswa SMK fokus pada Web Development dan AI. Saya terus belajar hal baru di dunia programming — meningkatkan skill dan memahami lebih banyak teknologi setiap hari.",
+    "Siswa SMK fokus pada Web Development dan AI. Saya terus belajar hal baru di dunia programming - meningkatkan skill dan memahami lebih banyak teknologi setiap hari.",
   location: "Bogor, Indonesia",
   accountCreated: "March 16, 2026",
   lastUpdated: "April 9, 2026",
