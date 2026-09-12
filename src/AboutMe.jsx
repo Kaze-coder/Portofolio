@@ -48,10 +48,10 @@ const REVEAL_CONTENT = [
   {
     upper: [
       `Halo, saya ${profile.name}.`,
-      `Siswa SMK yang suka ngoding dan bikin web`,
-      `yang bisa dipake orang lain — bukan cuma jalan di laptop sendiri.`,
+      `Siswa SMK yang mengembangkan website`,
+      `dan aplikasi berbasis web dengan standar kode yang rapi.`,
     ],
-    lower: `Fokus di Web Development & AI — Bogor, Indonesia`,
+    lower: `Bogor, Indonesia`,
   },
   {
     upper: [
@@ -59,7 +59,7 @@ const REVEAL_CONTENT = [
       `sekarang sering ngulik Laravel sampai Next.js.`,
       `Terus penasaran: "kenapa kode ini bisa jalan?"`,
     ],
-    lower: `Setiap project kecil = satu pelajaran baru`,
+    lower: `Setiap project adalah kesempatan menaikkan kualitas kode`,
   },
   {
     upper: [
@@ -67,7 +67,7 @@ const REVEAL_CONTENT = [
       `Pengen ngerti apa yang terjadi di baliknya.`,
       `Lambat tapi pasti, satu baris kode tiap hari.`,
     ],
-    lower: `Lagi dalam proses — dan menikmati prosesnya`,
+    lower: `Fokus pada fondasi yang kuat sebelum tools yang advanced`,
   },
 ];
 
