@@ -6,7 +6,7 @@ const ITEMS = [
   { id: "github",  label: "GITHUB LINK",   page: "github",  fontSize: 68, offsetX: 8, offsetY: 6,  skew: 0, skewY: -4  },
   { id: "socials", label: "SOCIALS",       page: "socials", fontSize: 74, offsetX: 16, offsetY: 8,  skew: -3,  skewY: 5   },
   { id: "sideproj",label: "SIDE PROJECTS", page: "sideproj",fontSize: 56, offsetX: 10, offsetY: 6,  skew: -4,  skewY: 7   },
-  { id: "contact", label: "CONTACT",       page: "contact", fontSize: 66, offsetX: 20, offsetY: 8,  skew: -11, skewY: -10 },
+  { id: "contact", label: "CONTACT",       page: "contact", fontSize: 50, offsetX: 8,  offsetY: 6,  skew: -4,  skewY: 7   },
 ];
 
 const CLIP_SHAPES = [
