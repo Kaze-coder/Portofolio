@@ -13,6 +13,7 @@ import ResumePage from './ResumePage'
 import PageTransition from './PageTransition'
 import Socials from './Socials'
 import AboutMe from './AboutMe'
+import ContactPage from './ContactPage'
 import VideoPreloader from './VideoPreloader'
 import './App.css'
 
@@ -590,6 +591,9 @@ function AnimatedRoutes() {
         } />
         <Route path="/sideproj" element={
           <PageTransition><SideProjectsPage /></PageTransition>
+        } />
+        <Route path="/contact" element={
+          <PageTransition><ContactPage /></PageTransition>
         } />
       </Routes>
     </AnimatePresence>

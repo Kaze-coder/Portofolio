@@ -1,6 +1,7 @@
 import aboutVideo from './assets/AboutsMe.mp4'
 import resumeVideo from './assets/Resumes.mp4'
 import socialsVideo from './assets/Social.mp4'
+import contactVideo from './assets/Contact.mp4'
 
 // Buffers the About / Resume / Socials backgrounds while the user sits on
 // the main menu, so page navigation swaps to an already-cached video.
@@ -20,6 +21,7 @@ export default function VideoPreloader() {
       <video src={aboutVideo} preload="auto" muted playsInline />
       <video src={resumeVideo} preload="auto" muted playsInline />
       <video src={socialsVideo} preload="auto" muted playsInline />
+      <video src={contactVideo} preload="auto" muted playsInline />
     </div>
   )
 }
