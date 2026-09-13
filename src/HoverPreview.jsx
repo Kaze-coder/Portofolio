@@ -9,7 +9,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
  * clip-path/transform can cut it off.
  */
 export default function HoverPreview({ children, image, alt = "", width = 220 }) {
-  const ref = useRef(null);
+  const started = useRef(false);
   const [visible, setVisible] = useState(false);
 
   const x = useMotionValue(0);
@@ -17,19 +17,32 @@ export default function HoverPreview({ children, image, alt = "", width = 220 })
   const sx = useSpring(x, { stiffness: 260, damping: 24, mass: 0.7 });
   const sy = useSpring(y, { stiffness: 260, damping: 24, mass: 0.7 });
 
-  const onMove = (e) => {
+  const setPos = (e) => {
     // Card lives in a portal at body level, so viewport coordinates are right.
     // Vertical offset centers the ~390px tall card on the cursor.
     x.set(e.clientX + 18);
     y.set(e.clientY - 195);
   };
 
+  const onEnter = (e) => {
+    // On fresh mount the springs start at (0,0) - teleport them to the cursor
+    // BEFORE the card becomes visible, so it never flies in from the left edge.
+    if (!started.current) {
+      started.current = true;
+      setPos(e);
+      sx.jump(e.clientX + 18);
+      sy.jump(e.clientY - 195);
+    }
+    setVisible(true);
+  };
+
+  const onMove = (e) => setPos(e);
+
   return (
     <>
       <span
-        ref={ref}
         className="hp-target"
-        onMouseEnter={() => setVisible(true)}
+        onMouseEnter={onEnter}
         onMouseMove={onMove}
         onMouseLeave={() => setVisible(false)}
       >
