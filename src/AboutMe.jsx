@@ -7,7 +7,11 @@ import photoPortofolio from "./assets/PhotoPortofolio.png";
 import {
   SiPython, SiPhp, SiJavascript, SiTypescript, SiLaravel, SiNextdotjs,
   SiReact, SiHtml5, SiCss, SiTailwindcss, SiMysql, SiNodedotjs, SiGit, SiGithub,
+  SiClaude,
 } from "react-icons/si";
+import brandOpenAI from "./assets/brand-openai.svg";
+import brandOpenCode from "./assets/brand-opencode.svg";
+import brandHermes from "./assets/brand-hermes.svg";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
@@ -40,10 +44,10 @@ const TECH_ICONS = [
 ];
 
 const LEARNING_ICONS = [
-  { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-  { name: "Python", icon: SiPython, color: "#3776AB" },
-  { name: "AI", icon: SiTypescript, color: "#3178C6" },
+  { name: "Claude", icon: SiClaude, color: "#D97757" },
+  { name: "ChatGPT", img: brandOpenAI },
+  { name: "OpenCode", img: brandOpenCode },
+  { name: "Hermes Agent", img: brandHermes },
 ];
 
 const REVEAL_CONTENT = [
@@ -177,7 +181,9 @@ export default function AboutMe() {
               <div className="sc-learning-row">
                 {LEARNING_ICONS.map((t) => (
                   <div className="sc-tech-item" key={t.name}>
-                    <t.icon size={26} color={t.color} />
+                    {t.img
+                      ? <img src={t.img} alt={t.name} className="sc-brand-img" />
+                      : <t.icon size={26} color={t.color} />}
                     <span className="sc-tech-name">{t.name}</span>
                   </div>
                 ))}
@@ -483,6 +489,11 @@ export default function AboutMe() {
           gap: 28px;
           margin-top: 14px;
           justify-content: center;
+        }
+        .sc-brand-img {
+          height: 26px;
+          width: auto;
+          display: block;
         }
         .sc-reveal-lower-bar {
           position: absolute;
