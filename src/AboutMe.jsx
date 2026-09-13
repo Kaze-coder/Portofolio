@@ -9,9 +9,9 @@ import {
   SiReact, SiHtml5, SiCss, SiTailwindcss, SiMysql, SiNodedotjs, SiGit, SiGithub,
   SiClaude,
 } from "react-icons/si";
-import brandOpenAI from "./assets/brand-openai.svg";
-import brandOpenCode from "./assets/brand-opencode.svg";
-import brandHermes from "./assets/brand-hermes.svg";
+import brandOpenAI from "./assets/openai.png";
+import brandOpenCode from "./assets/opencode.png";
+import brandHermes from "./assets/hermesagent.png";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
